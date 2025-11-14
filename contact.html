@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta cheset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial- scale=1.0">
+        <title>Contact - Vijay Sample Website</title>
+  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/500px-Google_Favicon_2025.svg.png">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+      <!----- Header ------>
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html"><img
+              src="https://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.3-hp2x.gif"
+              width="200px"></a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="account.html">Account</a></li>
+          </ul>
+        </nav>
+        <a href="enter.html"><img src="https://lordicon.com/icons/system/solid/113-log-sign-in.gif" width="25px"
+            height="25px"></a>
+        <img src="https://cdnl.iconscout.com/lottie/premium/thumb/menu-processing-5638036-4718768.gif" class="menu-icon"
+          onclick="menutoggle()">
+      </div>
+        </div>
+        <!----- About ----->
+        <div class="small-container">
+            <div class="title">
+                <h2>Contact us</h2>
+            </div>
+            <section class="contact-us">
+                <div class="row">
+                    <div class="contact-col">
+                        <div>
+                            <i class="fa fa-home"></i>
+                            <span>
+                                <h5>Tirunelveli</h5> <p>Tamil Nadu, India</p>
+                            </span>
+                        </div>
+                        <div>
+                            <i class="fa fa-phone"></i>
+                            <span>
+                                <h5>+91 7695875930</h5> <p>24x7 - Developer (VR) Vijay</p>
+                            </span>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope-o"></i>
+                            <span>
+                                <h5>@vrcreativesofficial.com</h5> <p>Email us your query</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="contact-col">
+                        <form id="simpleContactForm">
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                            <input type="email" id="email" placeholder="Enter email address" required>
+                            <input type="text" id="contact" placeholder="Enter your contact number" required>
+                            <textarea id="message" rows="8" placeholder="Message" required></textarea>
+
+                            <p id="statusMsg2" style="margin-top:10px;"></p>
+
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+
+                        <!-- ✅ EmailJS CDN -->
+                        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+                        <script>
+                          (function() {
+                            emailjs.init("37fCuJVtMj4qLBQYb"); // ✅ Your Public Key
+                          })();
+
+                          document.getElementById("simpleContactForm").addEventListener("submit", function(e) {
+                            e.preventDefault();
+
+                            const statusMsg = document.getElementById("statusMsg2");
+                            statusMsg.textContent = "Sending...";
+                            statusMsg.style.color = "#aaa";
+
+                            const params = {
+                              from_name: document.getElementById("name").value,
+                              from_email: document.getElementById("email").value,
+                              contact_number: document.getElementById("contact").value,
+                              message: document.getElementById("message").value
+                            };
+
+                            emailjs.send("service_vyywpsh", "template_spswjln", params)
+                              .then(() => {
+                                statusMsg.textContent = "Message sent successfully!";
+                                statusMsg.style.color = "green";
+
+                                  // ✅ WhatsApp Auto Redirect
+                                  setTimeout(() => {
+                                      window.location.href = `https://wa.me/+917695875930?text=Hi Vijay, I saw your Google Service Company Web Design. Can you share more details about your web designs?`;
+                                  }, 1000);
+
+                                document.getElementById("simpleContactForm").reset();
+                              })
+                              .catch((error) => {
+                                console.error("EmailJS Error:", error);
+                                statusMsg.textContent = "Failed to send message!";
+                                statusMsg.style.color = "red";
+                              });
+                          });
+                        </script>
+
+
+                    </div>
+                </div>
+            </section>
+            <section class="location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15775.005329599047!2d77.75899475150327!3d8.715147358856578!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1672833293361!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </div>
+  <!------ footer ------>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download Our App</h3>
+          <p>Download App for Android and ios mobile phone.</p>
+          <div class="app-logo">
+            <img src="https://venturebeat.com/wp-content/uploads/2017/03/google_play_logo.png?w=1200&strip=all">
+            <img src="https://aps.org/meetings/march/images/app-apple_1.png">
+          </div>
+        </div>
+        <div class="footer-col-2">
+          <a href="index.html"><img src="https://wallpapercave.com/wp/wp2860502.jpg"></a>
+          <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many. </p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Coupons</li>
+            <li>Blog Post</li>
+            <li>Return Policy</li>
+            <li>Join Affiliate</li>
+          </ul>
+        </div>
+        <div class="footer-col-4">
+          <h3>Follow us</h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+            <li>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <a href="about.html">
+        <p class="contact">Contact - Vijay Sample Website (www.vijaysamplewebsite.net)</p>
+      </a>
+    </div>
+  </div>
+        <!-----js for toggle menu----->
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+            MenuItems.style.maxHeight = "0px";
+            function menutoggle()
+            {
+                if (MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+                else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+            }
+        </script>
+    </body>
+</html>
